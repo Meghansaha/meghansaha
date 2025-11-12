@@ -10,3 +10,10 @@
 <!--START_SECTION:activity-->
 
 <!--END_SECTION:activity-->
+
+<br><br>
+
+<center>
+  <img src="enterprise_commits.png" alt="GitHub activity dashboard showing commits held by corporate firewalls">
+  <br>
+</center>
