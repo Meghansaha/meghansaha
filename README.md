@@ -3,7 +3,7 @@
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td><img
-  src="https://metrics.lecoq.io/meghansaha?template=classic&amp;habits=1&amp;base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&amp;base.indepth=false&amp;base.hireable=false&amp;base.skip=false&amp;habits=false&amp;habits.from=200&amp;habits.days=14&amp;habits.facts=true&amp;habits.charts=true&amp;habits.charts.type=classic&amp;habits.trim=false&amp;habits.languages.limit=8&amp;habits.languages.threshold=0%25&amp;config.timezone=America%2FNew_York"
+  src="https://metrics.lecoq.io/meghansaha?template=classic&followup=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&followup=false&followup.sections=repositories&followup.indepth=false&followup.archived=true&config.timezone=America%2FNew_York"
   alt="Metrics"
 />
 </td>
@@ -17,5 +17,3 @@
 <!--START_SECTION:activity-->
 
 <!--END_SECTION:activity-->
-
-
