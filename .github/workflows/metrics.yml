@@ -1,0 +1,33 @@
+name: GitHub Metrics
+
+on:
+  schedule:
+    - cron: "0 */24 * * *"
+  workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Output file written to your repo
+          filename: metrics.svg
+
+          # === Your settings (from your HTML embed) ===
+          template: classic
+          base: header, activity, community, repositories, metadata
+          base_indepth: false
+          base_hireable: false
+
+          # Follow-up section
+          followup: yes
+          followup_sections: repositories
+          followup_indepth: false
+          followup_archived: yes
+
+          # Timezone
+          config_timezone: America/New_York
