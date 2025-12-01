@@ -11,41 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Generate Fast Metrics
+      - name: Generate Metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # Output file stored in the repo
           filename: metrics.svg
-
-          # Don't commit writes on pull_request runs
-          dryrun: ${{ github.event_name == 'pull_request' }}
-
-          # ------------------------------
-          # HIGH-PERFORMANCE SETTINGS
-          # ------------------------------
-
           template: classic
 
-          # Base sections (kept the same visually)
+          # Base sections
           base: header, activity, community, repositories, metadata
-          base_indepth: no       # FAST
-          base_hireable: no
+          base_indepth: false
+          base_hireable: false
           config_timezone: America/New_York
 
-          # Followup sections — optimized
-          followup: yes
-          followup_sections: repositories
-          followup_indepth: no    # FAST
-          followup_archived: no   # HUGE SPEEDUP
-
-          # Disable slow optional plugins
-          commits_authoring: no
-          isocalendar: no
-          languages: no
-          topics: no
-          achievements: no
-          discussions: no
-          discussions_categories: no
-
+          # Optimize speed
+          optimize: yes      # fast mode enabled
+          repositories_batch: 100  # fetch repos in batches
