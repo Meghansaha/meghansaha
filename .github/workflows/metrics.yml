@@ -1,33 +1,51 @@
 name: GitHub Metrics
 
 on:
+  pull_request:
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Generate Metrics
+      - name: Generate Fast Metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Output file written to your repo
+          # Output file stored in the repo
           filename: metrics.svg
 
-          # === Your settings (from your HTML embed) ===
-          template: classic
-          base: header, activity, community, repositories, metadata
-          base_indepth: false
-          base_hireable: false
+          # Don't commit writes on pull_request runs
+          dryrun: ${{ github.event_name == 'pull_request' }}
 
-          # Follow-up section
+          # ------------------------------
+          # HIGH-PERFORMANCE SETTINGS
+          # ------------------------------
+
+          template: classic
+
+          # Base sections (kept the same visually)
+          base: header, activity, community, repositories, metadata
+          base_indepth: no       # FAST
+          base_hireable: no
+          config_timezone: America/New_York
+
+          # Followup sections — optimized
           followup: yes
           followup_sections: repositories
-          followup_indepth: false
-          followup_archived: yes
+          followup_indepth: no    # FAST
+          followup_archived: no   # HUGE SPEEDUP
 
-          # Timezone
-          config_timezone: America/New_York
+          # Disable slow optional plugins
+          commits_authoring: no
+          isocalendar: no
+          languages: no
+          topics: no
+          achievements: no
+          discussions: no
+          discussions_categories: no
+
