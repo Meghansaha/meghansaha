@@ -2,6 +2,8 @@ name: GitHub Metrics
 
 on:
   pull_request:
+    branches:
+      - main
   schedule:
     - cron: "0 */12 * * *"
   workflow_dispatch:
@@ -11,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Generate Fast Metrics
+      - name: Generate Metrics SVG
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -24,8 +26,11 @@ jobs:
           base_hireable: false
           config_timezone: America/New_York
 
-          # Speed & API use optimizations
+          # Speed optimization
           optimize: yes
           repositories_batch: 100
 
+          # Dedicated branch to avoid hangs
+          committer_branch: metrics-svg
+          committer_message: "Update GitHub Metrics SVG"
           dryrun: ${{ github.event_name == 'pull_request' }}
