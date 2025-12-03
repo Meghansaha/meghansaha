@@ -1,12 +1,9 @@
 name: GitHub Metrics
 
 on:
-  pull_request:
-    branches:
-      - main
   schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *" 
+  workflow_dispatch: 
 
 jobs:
   github-metrics:
@@ -26,11 +23,9 @@ jobs:
           base_hireable: false
           config_timezone: America/New_York
 
-          # Speed optimization
           optimize: yes
           repositories_batch: 100
 
-          # Dedicated branch to avoid hangs
-          committer_branch: metrics-svg
+          committer_branch: main
           committer_message: "Update GitHub Metrics SVG"
-          dryrun: ${{ github.event_name == 'pull_request' }}
+          dryrun: no
