@@ -26,6 +26,6 @@ jobs:
           optimize: yes
           repositories_batch: 100
 
-          committer_branch: main
+          committer_branch: metrics-svg
           committer_message: "Update GitHub Metrics SVG"
           dryrun: no
