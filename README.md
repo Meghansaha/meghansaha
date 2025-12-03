@@ -3,7 +3,7 @@
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td>
-<img src="./metrics.svg" alt="GitHub Metrics" />
+<img src="https://github.com/meghansaha/meghansaha/raw/metrics-svg/metrics.svg" alt="GitHub Metrics" />
 </td>
 <td><img src="https://spotify-recently-played-readme.vercel.app/api?user=12102151751&unique=true" alt="Spotify Recently Played"/></td>
 </tr>
