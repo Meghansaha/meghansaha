@@ -35,9 +35,11 @@ I occasionally write or speak about technical topics:
 
 ----
 
-<center>
-<img src="https://spotify-recently-played-readme.vercel.app/api?user=12102151751&unique=true" alt="Spotify Recently Played"/>
-</center>
+### I Love Music, Here's What I'm Listening To:
+
+<div align="center">
+<img src="https://spotify-recently-played-readme.vercel.app/api?user=12102151751&unique=true" alt="Spotify Recently Played" width="70%"/>
+</div>
 
 
 <!--START_SECTION:activity-->
