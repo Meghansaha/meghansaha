@@ -33,14 +33,6 @@ I occasionally write or speak about technical topics:
 - Talks and workshops: [here](https://thetidytrekker.com/talks)
 - Technical writing and blog posts: [here](https://thetidytrekker.com/blog)
 
-----
-
-### I Love Music, Here's What I'm Listening To:
-
-<div align="center">
-<img src="https://spotify-recently-played-readme.vercel.app/api?user=12102151751&unique=true" alt="Spotify Recently Played" width="50%"/>
-</div>
-
 
 <!--START_SECTION:activity-->
 
